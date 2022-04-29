@@ -1,0 +1,34 @@
+{
+    "fuzzing": {
+        "os_name": "Arch Linux",
+        "os_version": "Rolling",
+
+        "product_name": "Fuzzme Project",
+        "product_version": "1.0.0",
+        "module_name": "Fuzzme Module (GO)",
+        "application_name": "fuzzme",
+
+        "is_library": false,
+        "is_open_source": true,
+        "language": [
+            "GO"
+        ],
+        "parse_format": [
+            "XML", "HTML", "RegExp"
+        ],
+        "tested_source_file": "fuzzme.go",
+        "tested_source_function": "Parse",
+        "build_cmd": "./build.sh",
+        "build_root": "build",
+        "src_root": "/src/go",
+        "tested_binary_path": "fuzzme.zip",
+        "builder_type": "go-fuzz",
+        "coverage_type": "go-tool-cover",
+        "fuzzer_type": "go-fuzz",
+
+        "run_args": null,
+        "run_env": null,
+
+        "fuzz_cores": 8
+    }
+}

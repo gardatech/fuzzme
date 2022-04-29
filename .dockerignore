@@ -1,0 +1,21 @@
+# cmake build results
+build/
+.cache/
+
+*.log
+
+.vscode/
+
+core.*
+
+# coverage collection files
+profraw/
+*.profraw
+*.gcno
+*.gcda
+
+bin/
+
+.dockerignore
+Dockerfile
+.git/

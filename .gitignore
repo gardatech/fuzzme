@@ -1,0 +1,23 @@
+# local gitlab-ci build results
+builds/
+
+# cmake build results
+build/
+.cache/
+
+*.log
+
+.vscode/
+
+core.*
+
+# coverage collection files
+profraw/
+*.profraw
+*.gcno
+*.gcda
+
+bin/
+
+# editor temporary files
+*.swp
