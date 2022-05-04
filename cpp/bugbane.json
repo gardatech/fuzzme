@@ -20,15 +20,16 @@
         "tested_source_function": "fuzz",
         "build_cmd": "./build.sh",
         "build_root": "build",
-        "tested_binary_path": "fuzzme",
-        "fuzzer_type": "AFL++",
+        "tested_binary_path": "fuzz/fuzzme",
+        "builder_type": "libFuzzer",
+        "fuzzer_type": "libFuzzer",
 
-        "run_args": null,
+        "run_args": "@@",
         "run_env": null,
 
-        "fuzz_cores": 8,
+        "fuzz_cores": 4,
         "sanitizers": [
-            "ASAN", "UBSAN", "CFISAN"
+            "ASAN", "UBSAN"
         ]
     }
 }
