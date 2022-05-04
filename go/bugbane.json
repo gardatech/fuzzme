@@ -28,6 +28,7 @@
 
         "run_args": null,
         "run_env": null,
+        "timeout": 1500,
 
         "fuzz_cores": 8
     }

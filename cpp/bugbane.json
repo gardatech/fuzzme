@@ -26,6 +26,7 @@
 
         "run_args": "@@",
         "run_env": null,
+        "timeout": 1500,
 
         "fuzz_cores": 4,
         "sanitizers": [
