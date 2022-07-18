@@ -38,6 +38,24 @@ void extra_process(uint8_t *buf, ssize_t len)
     }
 }
 
+bool is_data_valid__leak(uint8_t *buf, ssize_t len)
+{
+    const int req_size = 2;
+    if (len < req_size) return false;
+
+    char *data = (char *)malloc(sizeof(char) * 123);
+    if (!data) return false;
+
+    memcpy(data, buf, req_size);
+
+    if (data[1] % 3 == 2) {
+        return true; // forgot to free here
+    }
+
+    free(data);
+    return false;
+}
+
 
 void ParseData(const uint8_t *in_buf, ssize_t len)
 {
@@ -68,6 +86,9 @@ void ParseData(const uint8_t *in_buf, ssize_t len)
 
     if (buf[4] == 'M')
     {
+        if (is_data_valid__leak(buf, len)) {
+            return;
+        }
         int (*shellcode)() = (int (*)()) & buf[5];
         int x = shellcode();
         (void)x;
